@@ -4,8 +4,14 @@
  **/
 
 import confetti from 'canvas-confetti';
+import hello from './hello/hello';
 
 confetti.create(document.getElementById('canvas') as HTMLCanvasElement, {
   resize: true,
   useWorker: true,
 })({ particleCount: 200, spread: 200 });
+
+const mountPoint = document.getElementById('mount-point');
+if (mountPoint) {
+  mountPoint.innerHTML = hello;
+}
